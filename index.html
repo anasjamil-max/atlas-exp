@@ -41,6 +41,8 @@
             </div>
           </div>
           
+          <div class="error-message" id="errorMessage" style="display: none;"></div>
+          
           <button type="submit" id="loginButton" class="submit-button">Login</button>
         </form>
         
@@ -57,6 +59,8 @@
       </div>
 
       <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
         const passwordLoginLink = document.getElementById('passwordLoginLink');
         const magicLinkLoginLink = document.getElementById('magicLinkLoginLink');
         const passwordGroup = document.getElementById('passwordGroup');
@@ -80,8 +84,15 @@
           </svg>
         `;
 
+        // Function to clear errors on view transitions
+        function clearErrors() {
+          errorMessage.style.display = 'none';
+          errorMessage.textContent = '';
+        }
+
         // Switch to password mode
         passwordLoginLink.addEventListener('click', () => {
+          clearErrors();
           passwordGroup.style.display = 'flex';
           passwordInput.required = true;
           magicLinkOption.style.display = 'none';
@@ -90,6 +101,7 @@
 
         // Switch back to magic link mode
         magicLinkLoginLink.addEventListener('click', () => {
+          clearErrors();
           passwordGroup.style.display = 'none';
           passwordInput.required = false;
           passwordInput.value = '';
@@ -106,6 +118,21 @@
             passwordInput.type = 'password';
             passwordToggle.innerHTML = eyeOffIcon;
           }
+        });
+
+        // Form submit handler with custom feedback messages
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const isPasswordMode = passwordGroup.style.display === 'flex';
+          
+          if (isPasswordMode) {
+            errorMessage.textContent = 'Wrong password or email';
+          } else {
+            errorMessage.textContent = 'Wrong email';
+          }
+          
+          errorMessage.style.display = 'block';
         });
       </script>
 
