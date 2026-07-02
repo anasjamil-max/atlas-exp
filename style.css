@@ -1,20 +1,17 @@
-/* Design Tokens & Variables */
 :root {
   --primary-font: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --bg-color: #ffffff;
   --text-primary: #000000;
   --text-secondary: #707070;
   --text-muted: #a0a0a0;
-  --accent-color: #ff532b; /* Vibrant coral-red/orange from reference */
-  --accent-hover: #e03b18; /* Darker accent tone for hover states */
-  --input-bg: #f7f7f8; /* Soft light gray input background */
+  --accent-color: #ff532b;
+  --accent-hover: #e03b18;
+  --input-bg: #f7f7f8;
   --input-border: #e6e6e8;
   --button-bg: #121212;
   --button-hover: #262626;
   --border-radius: 14px;
 }
-
-/* Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,24 +19,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   font-family: var(--primary-font);
   background-color: var(--bg-color);
   color: var(--text-primary);
-  letter-spacing: -0.025em; /* Slightly reduced letter spacing */
+  letter-spacing: -0.025em;
   overflow-x: hidden;
   height: 100vh;
 }
-
-/* Main Container Layout */
 .login-container {
   display: flex;
   height: 100vh;
   width: 100%;
 }
-
-/* Left Column: Form Section */
 .login-left {
   display: flex;
   flex-direction: column;
@@ -48,20 +40,15 @@ body {
   min-width: 480px;
   padding: 40px 80px;
 }
-
-/* Logo Styling */
 .logo-container {
   display: flex;
   align-items: center;
   height: 40px;
 }
-
 .logo-image {
   height: 20px;
   object-fit: contain;
 }
-
-/* Form Container & Content */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -70,7 +57,6 @@ body {
   width: 100%;
   margin: auto 0;
 }
-
 .welcome-title {
   font-size: 44px;
   font-weight: 500;
@@ -79,14 +65,12 @@ body {
   color: var(--text-primary);
   margin-bottom: 8px;
 }
-
 .signup-prompt {
   font-size: 14px;
   color: var(--text-secondary);
   font-weight: 400;
   margin-bottom: 32px;
 }
-
 .accent-link {
   color: var(--accent-color);
   text-decoration: none;
@@ -94,31 +78,25 @@ body {
   cursor: pointer;
   transition: color 0.2s ease;
 }
-
 .accent-link:hover {
   color: var(--accent-hover);
 }
-
-/* Form Fields */
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
-
 .input-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .input-label {
   font-size: 13px;
   font-weight: 400;
   color: var(--text-muted);
 }
-
 .text-input {
   width: 100%;
   height: 52px;
@@ -133,18 +111,14 @@ body {
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
 .text-input:focus {
   border-color: #b0b0b5;
   box-shadow: 0 0 0 1px #b0b0b5;
 }
-
 .text-input::placeholder {
   color: var(--text-muted);
   opacity: 0.8;
 }
-
-/* Login Button */
 .submit-button {
   width: 100%;
   height: 52px;
@@ -160,17 +134,13 @@ body {
   margin-top: 8px;
   transition: background-color 0.2s ease;
 }
-
 .submit-button:hover {
   background-color: var(--button-hover);
 }
-
-/* Password input container & eye toggle styling */
 .password-container {
   position: relative;
   width: 100%;
 }
-
 .password-toggle {
   position: absolute;
   right: 16px;
@@ -186,23 +156,18 @@ body {
   padding: 0;
   transition: color 0.2s ease;
 }
-
 .password-toggle:hover {
   color: var(--text-secondary);
 }
-
 .eye-icon {
   width: 20px;
   height: 20px;
   display: block;
 }
-
-/* Alternative Login Link */
 .alternative-login {
   margin-top: 24px;
   font-size: 14px;
 }
-
 .alternative-login-pwd {
   margin-top: 24px;
   font-size: 14px;
@@ -210,16 +175,13 @@ body {
   flex-direction: column;
   gap: 8px;
 }
-
 .forgot-prompt {
   color: var(--text-secondary);
   font-weight: 400;
 }
-
 #passwordLoginLink, #contactBrokeragePwd, #magicLinkLoginLink {
   font-weight: 500;
 }
-
 .error-message {
   font-size: 13px;
   color: var(--accent-color);
@@ -228,60 +190,47 @@ body {
   font-weight: 500;
   animation: fadeIn 0.2s ease-in-out;
 }
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-4px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-/* Footer links */
 .login-footer {
   display: flex;
   gap: 20px;
   margin-top: auto;
 }
-
 .footer-text {
   font-size: 12px;
   color: var(--text-muted);
 }
-
-/* Right Column: Hero Image Section */
 .login-right {
   flex: 1;
-  padding: 16px; /* Create the outer margin/gap around the image container */
+  padding: 16px;
   height: 100vh;
 }
-
 .hero-image-container {
   width: 100%;
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
 }
-
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
-/* Responsive Styling */
 @media (max-width: 960px) {
   body {
     overflow: hidden;
     height: 100vh;
   }
-
   .login-container {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
     position: relative;
   }
-  
-  /* Show hero image at the top of the mobile screen, cropped to 30% height */
   .login-right {
     display: block;
     order: 1;
@@ -290,26 +239,20 @@ body {
     padding: 0;
     flex-shrink: 0;
   }
-  
   .hero-image-container {
     border-radius: 0;
     width: 100%;
     height: 100%;
   }
-
   .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
   }
-
-  /* Hide logo container on mobile view */
   .logo-container {
     display: none;
   }
-  
-  /* Form card overlays the image with rounded top corners, stretching to fill height */
   .login-left {
     order: 2;
     width: 100%;
@@ -328,25 +271,23 @@ body {
     box-sizing: border-box;
     overflow: hidden;
   }
-  
   .form-container {
     margin: auto 0;
     max-width: 100%;
   }
-
   .welcome-title {
     font-size: 34px;
     margin-bottom: 4px;
   }
-
-  /* Wrap 'Don't have an account?' and 'Contact Brokerage' into two separate lines */
+  .text-input {
+    font-size: 16px;
+  }
   .signup-prompt {
     display: flex;
     flex-direction: column;
     gap: 4px;
     margin-bottom: 20px;
   }
-
   .login-footer {
     margin-top: auto;
   }
