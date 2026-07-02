@@ -304,17 +304,9 @@ body {
     object-position: center center;
   }
 
-  /* Absolute position black logo at the top left and invert to white */
+  /* Hide logo container on mobile view */
   .logo-container {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    z-index: 10;
-  }
-
-  .logo-image {
-    filter: brightness(0) invert(1);
-    height: 18px;
+    display: none;
   }
   
   /* Form card overlays the image with rounded top corners, stretching to fill height */
